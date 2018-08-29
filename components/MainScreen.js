@@ -11,9 +11,9 @@ import HomeTab from './AppTabNavigator/HomeTab';
 class MainScreen extends React.Component {
 
     static navigationOptions = {
-        headerLeft: <Icon name="ios-camera-outline" style={{paddingLeft: 10 }}/>,
+        headerLeft: <Icon name="ios-camera-outline" style={{ paddingLeft: 10 }}/>,
         title: "Instagram",
-        headerRight: <Icon name="ios-send-outline" style={{paddingRight: 10}}/>
+        headerRight: <Icon name="ios-send-outline" style={{ paddingRight: 10 }}/>
     }
 
   render() {
