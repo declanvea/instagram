@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View , ScrollView} from 'react-native';
-import {Icon, Container, Content, Thumbnail } from 'native-base';
+import {Icon, Container, Content, Thumbnail, Header, Left, Right, Body } from 'native-base';
 import CardComponent from '../CardComponent';
 
 class HomeTab extends React.Component {
@@ -26,6 +26,11 @@ class HomeTab extends React.Component {
     }
     return (
       <Container style={styles.container}>
+        <Header>
+          <Left><Icon name='ios-camera-outline' style={{ paddingLeft: 10 }}></Icon></Left>
+          <Body><Text>Instagram</Text></Body>
+          <Right><Icon name='ios-send-outline' style={{ paddingRight: 10 }}></Icon></Right>
+        </Header>
         <Content>
           <View style={{ height: 100 }}>
             <View style={{ flex:1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7 }}>
