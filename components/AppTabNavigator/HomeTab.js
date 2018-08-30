@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View , ScrollView} from 'react-native';
+import { StyleSheet, Text, View , ScrollView, Image } from 'react-native';
 import {Icon, Container, Content, Thumbnail, Header, Left, Right, Body } from 'native-base';
 import CardComponent from '../CardComponent';
 
@@ -10,25 +10,25 @@ class HomeTab extends React.Component {
         )
     }
   render() {
-    const headshots = {
-      '1': require('../../assets/headshots/headshot1.jpg'),
-      '2': require('../../assets/headshots/headshot2.jpg'),
-      '3': require('../../assets/headshots/headshot3.jpg'),
-      '4': require('../../assets/headshots/headshot4.jpg'),
-      '5': require('../../assets/headshots/headshot5.jpg'),
-      '6': require('../../assets/headshots/headshot6.jpg'),
-      '7': require('../../assets/headshots/headshot7.jpg'),
-      '8': require('../../assets/headshots/headshot8.jpg'),
-      '9': require('../../assets/headshots/headshot9.jpg'),
-      '10': require('../../assets/headshots/headshot10.jpg'),
-      '11': require('../../assets/headshots/headshot11.jpg'),
-      '12': require('../../assets/headshots/headshot12.jpg')
-    }
+    const headshots = [
+      {source: require('../../assets/headshots/headshot1.jpg')},
+      {source: require('../../assets/headshots/headshot2.jpg')},
+      {source: require('../../assets/headshots/headshot3.jpg')},
+      {source: require('../../assets/headshots/headshot4.jpg')},
+      {source: require('../../assets/headshots/headshot5.jpg')},
+      {source: require('../../assets/headshots/headshot6.jpg')},
+      {source: require('../../assets/headshots/headshot7.jpg')},
+      {source: require('../../assets/headshots/headshot8.jpg')},
+      {source: require('../../assets/headshots/headshot9.jpg')},
+      {source: require('../../assets/headshots/headshot10.jpg')},
+      {source: require('../../assets/headshots/headshot11.jpg')},
+      {source: require('../../assets/headshots/headshot12.jpg')}
+    ]
     return (
       <Container style={styles.container}>
         <Header>
           <Left><Icon name='ios-camera-outline' style={{ paddingLeft: 10 }}></Icon></Left>
-          <Body><Text>Instagram</Text></Body>
+          <Body><Image style={{ height: 25, width: 75 }} source={ require('../../assets/instagram.png') }/></Body>
           <Right><Icon name='ios-send-outline' style={{ paddingRight: 10 }}></Icon></Right>
         </Header>
         <Content>
@@ -50,61 +50,14 @@ class HomeTab extends React.Component {
                     paddingEnd: 5
                 }}
               >
-              {/* { headshots.map( (headshot, i) => 
+              { headshots.map( (headshot, i) => (
                 <Thumbnail
-                    key={i}
-                    style={{ marginHorizontal: 5, borderColor: '#ffc0cb' }}
-                    source={ headshot[i+1] }
-                />  )
-              } */}
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['1'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['2'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['3'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['4'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['5'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['6'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['7'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['8'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['9'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['10'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['11'] }
-                />
-                <Thumbnail
-                style={styles.border}
-                source={ headshots['12'] }
-                />
+                  key={i}
+                  style={{ marginHorizontal: 5, borderColor: '#ffc0cb' }}
+                  source={ headshot.source }
+                />  
+              ))
+              }
               </ScrollView>
             </View>
           </View>
